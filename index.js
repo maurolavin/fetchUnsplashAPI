@@ -1,3 +1,18 @@
+let clientID = "X8yrly2QKNloMyYD9cty4N_XMnZ6pywv3DVxx3hiJWQ";
+let endpoint = `https://api.unsplash.com/photos/random/?client_id=${clientID}`;
+
+let imageCatamarca = document.querySelector("#unsplashImage");
+let imageLink = document.querySelector("#imageLink");
+
+fetch(endpoint)
+    .then(function (response){
+        return response.json();
+    })
+    .then(function (jsonData) {
+        imageCatamarca.src = "https://source.unsplash.com/1600x900/?catamarca";
+
+    })
+
 const noEncontrado = 'Producto no encontrado';
 
 const productos =[ "aceite de oliva extra virgen x500cc $650",
@@ -14,8 +29,6 @@ const contactos =[
 const reclamos =[
     "Para iniciar el reclamo, contactese a reclamos@fincatierras.com"
 ]
-
-/* let seccion = prompt("¡Hola, Bienvenido a Finca Tierras Catamarqueñas! Desea comprar, contactar o reclamar?"); */
 
 let botonProductos = document.getElementById("seleccionProducto");
 let botonContacto = document.getElementById("seleccionContacto");
